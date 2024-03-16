@@ -1,0 +1,113 @@
+*, ::before, ::after {
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	line-height:var(--line-height); /* also for: letter-spacing? */
+	background-repeat: no-repeat;
+}
+html {
+	block-size: 100%;
+	word-break:break-word;
+	overflow-wrap:break-word;
+	-webkit-hyphens: auto;
+	hyphens: auto;
+	hyphenate-limit-chars:auto 3; /* only chrome >= 109 */
+	tab-size: 4;
+	--line-height: calc(1em + .5rem);
+	-webkit-tap-highlight-color: transparent;
+	font-family: system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+	font-size: calc(12px + .3vw);
+	scrollbar-gutter: stable;
+	overflow-y: auto;
+}
+body {
+	margin:auto;
+	min-block-size: 100%;
+	font-size:max(1rem, 16px); /* 16px => safari ios dont zoom in */
+}
+h1, h2, h3, h4, h5, h6 {
+	margin-top:1em;
+	margin-bottom:1em;
+}
+h1, h2, h3, h4, h5, h6, figcaption, blockquote, legend, caption { /* th? */
+	text-wrap: balance; /* chrome 113? */
+}
+hr {
+	border-style:solid;
+	border-width:0 0 1px 0;
+	border-top-width:0 !important;
+}
+video, audio, video, iframe {
+	width: 100%;
+	width:-moz-available;
+	width:-webkit-fill-available;
+}
+img, svg, canvas {
+	max-width: 100%;
+	max-width:-moz-available;
+	max-width:-webkit-fill-available;
+}
+img, svg, video, canvas {
+	object-fit:cover;
+	height: auto;
+}
+video { background-color:#aaa; }
+script, style {
+	white-space: pre;
+	font-family: monospace;
+	margin-block-start: 1rem;
+	margin-block-end: 1rem;
+	overflow:auto;
+}
+/* table */
+table {
+	border-collapse: collapse;
+	border-spacing: 0; /* if not collapsed, border-spacing defaults to 0 */
+	font-variant-numeric: tabular-nums;
+}
+th {
+	text-align: inherit;
+	text-align: -webkit-match-parent; /* inherit not working in safari */
+}
+/* nav */
+nav a { text-decoration:none; } /* display:block? color:inherit? */
+nav li { list-style: none; }
+nav ul { padding-left:1.5em; }
+nav > ul { padding-left:0; }
+
+/* clickable */
+select, summary, label, button:not(:disabled), [type=checkbox], [type=radio], [type=file], .btn {
+	cursor:pointer;
+}
+
+[inert] { opacity:.4; }
+
+/* form */
+input, textarea, select, button, .btn {
+	padding:.2em;
+	border:1px solid rgba(0,0,0,.5);
+	font: inherit; /* inherits line-height which is stronger than `* { line-height:var(--line-height); }` */
+	/*
+	try to match immutable select-line-height
+	in chrome:1.22, in ff:1.17 (best fit line-height:1.19?)
+	"normal" does not work in chrome unlike appereance:none
+	*/
+	line-height:var(--line-height);
+	--line-height:normal;
+}
+button, .btn {
+	padding-left:.7em;
+	padding-right:.7em;
+	/* text-decoration:none; if a.btn, or a button zzz in classless*/
+}
+select { background-color:Field; }
+textarea {
+	vertical-align: baseline;
+	vertical-align: -webkit-baseline-middle;
+	/* display: inline-table; chrome makes align with the first line, but unresizable */
+}
+textarea { resize: vertical; }
+textarea:not(:hover) { resize:none; }
+
+input, textarea { width:13rem; }
+[type=radio], [type=checkbox], [type=file], [type=date], [type=time], [type=datetime-local], [type=color] { width:revert; }  /* todo: incomplete? */
+[type=range] { vertical-align:middle }
