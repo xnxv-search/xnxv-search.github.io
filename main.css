@@ -1,0 +1,162 @@
+html {
+	font-size: 62.5%;
+}
+header {
+	position: absolute;
+	top: 0; left: 0;
+	width: 100%;
+}
+header h1 {
+	font-size: 3rem;
+	margin: 1.3rem auto;
+	text-align: center;;
+}
+body {
+	padding-top: 10rem;
+}
+main {
+	position: relative;
+	display: grid;
+	justify-items: center;
+}
+.wrapper {
+	display: grid;
+	width: 90%;
+	margin-top: 4em;
+	gap: 10px;
+}
+.form-section {
+	width: 95%;
+	margin: 0 auto;
+	display: grid;
+}
+.form-section:first-child {
+	margin-top: 7px;
+}
+.form-section:last-child {
+	margin-bottom: 7px;
+}
+.form-section:not(.action) {
+	grid-template-columns:
+	minmax(min(4em, 100%), 2fr)
+	minmax(min(5em,100%),5fr);
+	grid-template-rows: auto;
+}
+.form-section .field {
+	align-self: center;;
+}
+.form-section .form-input {
+	display: grid;
+}
+.form-section .form-input.radio{
+	grid-template-columns: repeat(auto-fill, minmax(min(7rem, 100%), 1fr));
+	align-items: center;
+	gap: 3px;
+}
+.form-input.text {
+	grid-template-columns: 1fr;
+}
+.form-input.text .input.text {
+	width: 98%;
+}
+/* .form-section .input-wrapper.radio {
+	position: relative;
+	align-items: center;
+	justify-content: center;
+	justify-items: center;
+	min-height: 2em;
+	border: 2px solid black;
+	border-radius: 10px;
+	overflow: auto;
+} */
+.form-section.action {
+	grid-template-columns: repeat(auto-fit, minmax(min(6em, 100%), 1fr));
+	gap: 0.5em;
+	justify-content: space-around;
+}
+
+[data-state="inactive"] {
+	display: none;
+}
+.wrapper.output {
+	justify-content: center;
+	grid-template-columns: 1fr;
+}
+.output .row {
+	width: 95%;
+	margin: 0 auto;
+	display: grid;
+}
+.output .row:last-child {
+	margin-bottom: 7px;
+}
+.output .row > * {
+}
+.output .row:not(.multi) {
+	grid-template-columns: 1fr;
+	justify-content: stretch;
+	text-align: center;
+}
+.output .row.multi {
+	grid-template-columns: repeat(auto-fit, minmax(min(2em, 99%), 1fr));
+	gap: 5px;
+}
+.output .row.label label {
+	font-size: 1.15em;
+	font-weight: 500;
+	margin-top: 5px;
+}
+.output .row.textbox input {
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+}
+.output .row.actions {
+	margin-top: 5px;
+	width: 80%;
+	gap: 10px;
+}
+/*
+.radio.input {
+	display: none;
+}
+.radio.label {
+	font-size: 1.3rem;
+	position: absolute;
+	top: 50%; left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	height: 70%;
+	text-align: center;
+	vertical-align: middle;
+}
+.radio.input:checked + .radio.label {
+	font-weight: 600;
+	text-decoration: underline;
+}
+.output .radio-box input {
+	display: none;
+}
+.output .radio-box label {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	border: 1px solid black;
+}
+.output .radio-box input:checked + label {
+	font-weight: 500;
+	text-decoration: underline;
+}
+*/
+input[type="radio"] {
+	display: none;
+}
+input[type="radio"] + label {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	padding: 0.5rem 0;
+	border-radius: 10px;
+}
+input[type="radio"]:checked + label {
+}
