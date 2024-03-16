@@ -1,0 +1,61 @@
+/* [COLORS] */
+:root {
+    --xv-accent: rgb(225, 52, 36);
+    --xv-main: rgb(255, 255, 255);
+    --xv-bg: rgb(0,0,0);
+    --xnxx-bg-a: rgb(0,0,144);
+    --xnxx-bg-b: rgb(0,0,99);
+    --xnxx-text-a: rgb(255,255,255);
+    --xnxx-text-b: rgb(151,192,255);
+    --xnxx-text-c: rgb(105,164,254);
+    --xnxx-accent: rgb(255,218,0);
+    --color-0: #E6EFF5;
+    --color-1: #F6F4EB;
+    --color-2: #91C8E4;
+    --color-3: #749BC2;
+    --color-4: #4682A9;
+    --color-5: #3F7497;
+    --color-6: #74a5c2;
+    --color-7: #A1D0E8;
+    --color-8: #00B4D8;
+    --color-9: #90E0EF;
+    --color-text: #393939;
+}
+
+body {
+	background-color: var(--color-1);
+	color: var(--color-text);
+}
+header {
+	width: 100%;
+	top: 0px;
+	background-color: var(--color-3);
+	/* box-shadow: -2px -2px 10px 3px rgba(0,0,0,0.3) inset; */
+	box-shadow: 0 3px 5px var(--black-30);
+}
+.wrapper {
+	border: 1px solid var(--color-4);
+	border-radius: 7px;
+	background-color: var(--white-70);
+}
+
+input[type="radio"] + label {
+	border: 1.5px solid var(--color-4);
+	color: var(--color-0);
+	background-color: var(--color-3);
+	box-shadow:
+		-1px -1px 2px 0 var(--black-40) inset,
+		1px 1px 2px 0 var(--black-40) inset;
+	font-weight: 650;
+	transition: all 0.25s ease;
+}
+input[type="radio"]:checked + label {
+	/* color: var(--color-5); */
+	/* box-shadow:
+		1px 1px 4px 0px rgba(0,0,0,0.4) inset; */
+	filter: brightness(120%);
+}
+button {
+	border-radius: 15px;
+	background-color: var(--color-2);
+}
