@@ -2,13 +2,14 @@ function addElement(elemType = '', elemId = '', elemText = '', parentElem = '', 
   if (!elemId) {
     elemId = 'my' + elemType.charAt(0).toUpperCase() + elemType.substr(1).toLowerCase();
   }
+/*
   if (!elemText) {
     elemText = '&nbsp;';
   }
   if (elemText == "-") {
     elemText = '';
   }
-
+*/
   if (!parentElem) {
     parentElem = document.body;
   }
@@ -22,7 +23,7 @@ function addElement(elemType = '', elemId = '', elemText = '', parentElem = '', 
   if (!beforeElem) {
     parentElem.appendChild(elem);
   } else {
-    parentElem.insertBefore(elem, beforeElem)
+    parentElem.insertBefore(elem, beforeElem);
   }
 
   elemClasses.forEach(x => elem.classList.add(x));
@@ -31,4 +32,3 @@ function addElement(elemType = '', elemId = '', elemText = '', parentElem = '', 
 
   return document.getElementById(elemId);
 }
-// codeInjector(addElement);

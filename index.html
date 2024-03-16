@@ -1,119 +1,247 @@
 <!DOCTYPE html>
-<html data-test="on">
-	<head>
-		<title>XNXV Search</title>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<!-- <script src="./js/addCode.js"></script> -->
-		<!-- <script src="./js/addCss.js"></script> -->
-		<script src="./js/addElement.js"></script>
-		<script src="./js/copyText.js"></script>
-		<script src="./js/dateTime.js"></script>
-		<!-- <script src="./js/fileSafe.js"></script> -->
-		<script src="./js/getElement.js"></script>
-		<!-- <script src="./js/parseURL.js"></script> -->
 
-		<link rel="stylesheet" href="./base.css" />
-		<link rel="stylesheet" href="./main.css" />
-		<link rel="stylesheet" href="./color_bw.css" />
-		<link rel="stylesheet" href="./color.css" />
-		<!-- <script src="./tailwind.js"></script> -->
-	</head>
-	<body>
-		<header>
-			<h1>XNXV Search</h1>
-		</header>
-		<main>
-			<form id="input-div" class="form-wrapper wrapper" onsubmit="return false;">
-					<section class="form-section query">
-						<label class="field" for="input-query">Search</label>
-						<div class="form-input text">
-							<input type="text" id="input-query" name="input-query" class="input text query" placeholder="Enter query..." required />
-						</div>
-					</section>
-					<section class="form-section site">
-						<div class="field">Site</div>
-						<div class="form-input radio">
-							<span class="input-wrapper radio">
-								<input type="radio" name="site" id="site-xnxx" value="xnxx" class="input radio site" checked />
-								<label for="site-xnxx" class="label radio site">XNXX</label>
-							</span>
-							<span class="input-wrapper radio">
-								<input type="radio" name="site" id="site-xv" value="xv" class="input radio site" />
-								<label for="site-xv" class="label radio site">XV</label>
-							</span>
-						</div>
-					</section>
-					<section class="form-section duration">
-						<div class="field">Duration</div>
-						<div class="form-input radio">
-							<span class="input-wrapper radio">
-								<input type="radio" name="dur" id="dur-a" value="a" class="input radio dur" />
-								<label for="dur-a" class="label radio dur">10-20</label>
-							</span>
-							<span class="input-wrapper radio">
-								<input type="radio" name="dur" id="dur-b" value="b" class="input radio dur" checked />
-								<label for="dur-b" class="label radio dur">10+</label>
-							</span>
-							<span class="input-wrapper radio">
-								<input type="radio" name="dur" id="dur-c" value="c" class="input radio dur" />
-								<label for="dur-c" class="label radio dur">20+</label>
-							</span>
-						</div>
-					</section>
-        <section class="form-section type">
-						<div class="field">Type</div>
-						<div class="form-input radio">
-							<span class="input-wrapper radio">
-								<input type="radio" name="type" id="type-misc" value="misc" class="input radio type" checked />
-								<label for="type-misc" class="label radio type">Misc</label>
-							</span>
-							<span class="input-wrapper radio">
-								<input type="radio" name="type" id="type-star" value="star" class="input radio type" />
-								<label for="type-star" class="label radio type">Star</label>
-							</span>
-							<span class="input-wrapper radio">
-								<input type="radio" name="type" id="type-channel" value="channel" class="input radio type" />
-								<label for="type-channel" class="label radio type">Channel</label>
-							</span>
-						</div>
-					</section>
-					<section class="form-section action">
-						<button id="btn-run" class="form btn run">Run!</button>
-						<button id="btn-reset" class="form btn reset" type="reset">Reset</button>
-					</section>
-			</form>
-			<div id="output-div" class="wrapper output">
-				<section class="row label">
-					<label for="output-box">Folder Name</label>
-				</section>
-				<section class="row textbox">
-					<input type="text" name="output-box" id="output-box" class="textbox output" readonly />
-				</section>
-				<section class="row options multi">
-					<span class="input-wrapper radio radio-box">
-						<input type="radio" name="name-opt" id="no-misc" value="" checked />
-						<label for="no-misc">Misc</label>
-					</span>
-					<span class="input-wrapper radio radio-box">
-						<input type="radio" name="name-opt" id="no-star" value="@" />
-						<label for="no-star">Star</label>
-					</span>
-					<span class="input-wrapper radio radio-box">
-						<input type="radio" name="name-opt" id="no-chan" value="#" />
-						<label for="no-chan">Channel</label>
-					</span>
-				</section>
-				<section class="row actions multi">
-					<button id="searchBtn">Search</button>
-					<button id="copyBtn">Copy</button>
-					<button id="backBtn">Back</button>
-				</section>
-			</div>
-		</main>
-		<footer style="position: absolute; bottom: 5px;">
-		</footer>
-		<script src="./script.js"></script>
-		<script src="./test.js"></script>
-	</body>
+<html data-test="on">
+
+ <head>
+
+  <title>XNXV Search</title>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- <script src="./js/addCode.js"></script> -->
+
+  <!-- <script defer src="./js/addCss.js"></script> -->
+
+  <script defer src="./js/addElement.js"></script>
+
+  <script defer src="./js/copyText.js"></script>
+
+  <script defer src="./js/dateTime.js"></script>
+
+  <!-- <script defer src="./js/fileSafe.js"></script> -->
+
+  <script defer src="./js/getElement.js"></script>
+
+  <!--  <script defer src="./js/parseURL.js"></script> -->
+
+  <script defer src="./console.js"></script>
+
+  <script defer src="./script.js"></script>
+
+  <script defer src="./searchParams.js"></script>
+
+  <script defer src="./test.js"></script>
+
+  <script defer src="./test_fn.js"></script>
+
+  <link rel="stylesheet" href="./base.css" />
+
+  <link rel="stylesheet" href="./main.css" />
+
+  <link rel="stylesheet" href="./test.css" />
+
+  <link rel="stylesheet" href="./color_bw.css" />
+
+  <link rel="stylesheet" href="./color.css" />
+
+  <!-- <script src="./tailwind.js"></script> -->
+
+ </head>
+
+ <body>
+
+  <header>
+
+   <h1>XNXV Search</h1>
+
+  </header>
+
+  <main>
+
+   <form id="input-div" class="form-wrapper wrapper" onsubmit="return false;">
+
+     <section class="form-section query">
+
+      <label class="field" for="input-query">Search</label>
+
+      <div class="form-input text">
+
+       <input type="text" id="input-query" name="input-query" class="input text query" placeholder="Enter query..." required />
+
+      </div>
+
+     </section>
+
+     <section class="form-section site">
+
+      <div class="field">Site</div>
+
+      <div class="form-input radio">
+
+       <span class="input-wrapper radio">
+
+        <input type="radio" name="site" id="site-xnxx" value="xnxx" class="input radio site" checked />
+
+        <label for="site-xnxx" class="label radio site">XNXX</label>
+
+       </span>
+
+       <span class="input-wrapper radio">
+
+        <input type="radio" name="site" id="site-xv" value="xv" class="input radio site" />
+
+        <label for="site-xv" class="label radio site">XV</label>
+
+       </span>
+
+      </div>
+
+     </section>
+
+     <section class="form-section duration">
+
+      <div class="field">Duration</div>
+
+      <div class="form-input radio">
+
+       <span class="input-wrapper radio">
+
+        <input type="radio" name="dur" id="dur-a" value="a" class="input radio dur" />
+
+        <label for="dur-a" class="label radio dur">10-20</label>
+
+       </span>
+
+       <span class="input-wrapper radio">
+
+        <input type="radio" name="dur" id="dur-b" value="b" class="input radio dur" checked />
+
+        <label for="dur-b" class="label radio dur">10+</label>
+
+       </span>
+
+       <span class="input-wrapper radio">
+
+        <input type="radio" name="dur" id="dur-c" value="c" class="input radio dur" />
+
+        <label for="dur-c" class="label radio dur">20+</label>
+
+       </span>
+
+      </div>
+
+     </section>
+
+     <section class="form-section type">
+
+      <div class="field">Type</div>
+
+      <div class="form-input radio">
+
+       <span class="input-wrapper radio">
+
+        <input type="radio" name="type" id="type-misc" value="" data-value="misc" class="input radio type" checked />
+
+        <label for="type-misc" class="label radio type">Misc</label>
+
+       </span>
+
+       <span class="input-wrapper radio">
+
+        <input type="radio" name="type" id="type-star" value="@" data-value="star" class="input radio type" />
+
+        <label for="type-star" class="label radio type">Star</label>
+
+       </span>
+
+       <span class="input-wrapper radio">
+
+        <input type="radio" name="type" id="type-channel" value="#" data-value="channel" class="input radio type" />
+
+        <label for="type-channel" class="label radio type">Channel</label>
+
+       </span>
+
+      </div>
+
+     </section>
+
+     <section class="form-section action">
+
+      <button id="btn-run" class="form btn run">Run!</button>
+
+      <button id="btn-reset" class="form btn reset" type="reset">Reset</button>
+
+     </section>
+
+   </form>
+
+   <div id="output-div" class="wrapper output">
+
+    <section class="row label">
+
+     <label for="output-box">Folder Name</label>
+
+    </section>
+
+    <section class="row textbox">
+
+     <input type="text" name="output-box" id="output-box" class="textbox output" readonly />
+
+    </section>
+
+    <!-- 
+
+    <section class="row options multi">
+
+     <span class="input-wrapper radio radio-box">
+
+      <input type="radio" name="name-opt" id="no-misc" value="" checked />
+
+      <label for="no-misc">Misc</label>
+
+     </span>
+
+     <span class="input-wrapper radio radio-box">
+
+      <input type="radio" name="name-opt" id="no-star" value="@" />
+
+      <label for="no-star">Star</label>
+
+     </span>
+
+     <span class="input-wrapper radio radio-box">
+
+      <input type="radio" name="name-opt" id="no-chan" value="#" />
+
+      <label for="no-chan">Channel</label>
+
+     </span>
+
+    </section>
+
+     -->
+
+    <section class="row actions multi">
+
+     <button id="searchBtn">Search</button>
+
+     <button id="copyBtn">Copy</button>
+
+     <button id="backBtn">Back</button>
+
+    </section>
+
+   </div>
+
+  </main>
+
+  <footer style="position: absolute; bottom: 5px;">
+
+  </footer>
+
+ </body>
+
 </html>

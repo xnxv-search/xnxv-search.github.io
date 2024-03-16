@@ -1,7 +1,3 @@
-function log(input) {
-	console.log(input);
-}
-
 function checkQuery() {
 	const iBox = document.getElementById('input-query');
 	return iBox.checkValidity();
@@ -88,7 +84,7 @@ function runSearch() {
 }
 function buildName() {
 	const i = getInput();
-	const p = getRadio('name-opt');
+	const p = getRadio("type");
 	const d = dt_getFullDate('yyyy.mm.dd');
 	let name = `${i.site.toUpperCase()} (${p}${i.raw} -- ${d})`;
 	return name;
@@ -98,10 +94,26 @@ function updateName() {
 	const out = document.getElementById('output-box');
 	let name = buildName();
 	out.value = name;
+	updateTitle(name);
+}
+function updateTitle(suffix) {
+	/*
+	let nnewTitl;
+	if (!suffix){
+		newTitle = 'XNXV Search';
+	}
+	else {
+		newTitle = ;
+	}
+	*/
+	const newTitle = (!suffix) ? (`XNXV Search`) : (`${suffix} | XNXV Search`);
+	document.title = newTitle;
+	log('Title:',newTitle);
 }
 function back() {
 	outbox(0);
 	inbox(1);
+	updateTitle();
 }
 function search() {
 	if(!checkQuery()){ return false; }

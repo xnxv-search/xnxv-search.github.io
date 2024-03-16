@@ -1,3 +1,16 @@
+const test = { auto: {} };
+
+/*
+test.f1 = function () {
+	
+};
+test.auto.f1 = function () {
+	
+};
+*/
+
+
+/*
 // const testDiv = document.getElementById('test-wrapper');
 const pElem = document.querySelector('footer');
 const testDiv = addElement('div','test-wrapper','-',pElem);
@@ -49,4 +62,4 @@ function addTest(num, callback) {
 //addTest2();
 addTest('3',runTest3);
 
-// addElement(elemType = '', elemId = '', elemText = '', parentElem = '', beforeElem = '', elemClasses = [], elemAttrib = {})
+*/

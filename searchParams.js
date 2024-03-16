@@ -1,6 +1,9 @@
-function addParam(url, param, value) {
-   var a = document.createElement('a'), regex = /(?:\?|&amp;|&)+([^=]+)(?:=([^&]*))*/g;
-   var match, str = []; a.href = url; param = encodeURIComponent(param);
+function addParam(param, value) {
+	const url = document.URL;
+   var a = document.createElement('a'),
+  		regex = /(?:\?|&amp;|&)+([^=]+)(?:=([^&]*))*/g;
+   var match, str = []; a.href = url;
+   param = encodeURIComponent(param);
    while (match = regex.exec(a.search))
        if (param != match[1]) str.push(match[1]+(match[2]?"="+match[2]:""));
    str.push(param+(value?"="+ encodeURIComponent(value):""));
@@ -18,14 +21,12 @@ function getParam () {
 	return id;
 }
 
-function setId () {
+function setParam (param,value) {
 	const url = new URL(document.URL);
-	const codes = getInput().join(',');
-	url.searchParams.set("id",codes);
-	// console.log(url.toString());
+	url.searchParams.set(param,value);
 	history.replaceState({},"",url);
 }
-function clearId() {
+function clearSearchParams() {
 	const url = new URL(document.URL);
 	url.searchParams.delete("id");
 	history.pushState({},"",url);

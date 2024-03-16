@@ -20,7 +20,6 @@ html {
 	overflow-y: auto;
 }
 body {
-	padding: 0px;
 	margin:auto;
 	min-block-size: 100%;
 	font-size:max(1rem, 16px); /* 16px => safari ios dont zoom in */
