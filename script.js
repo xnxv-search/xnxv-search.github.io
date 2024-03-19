@@ -81,6 +81,8 @@ function runSearch() {
 	inbox(0);
 	outbox(1);
 	updateName();
+	copy();
+	search();
 }
 function buildName() {
 	const i = getInput();
