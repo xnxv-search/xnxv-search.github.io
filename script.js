@@ -113,16 +113,17 @@ function paramsAuto() {
 	setRadio('site');
 	setRadio('dur');
 	setRadio('type');
-	inbox(0);
-	outbox(1);
 	updateName();
-}
-function runSearch() {
-	if(!checkQuery()){ return false; }
 	paramSet();
 	inbox(0);
 	outbox(1);
+}
+function runSearch() {
+	if(!checkQuery()){ return false; }
 	updateName();
+	paramSet();
+	inbox(0);
+	outbox(1);
 	copy();
 	// search();
 }
