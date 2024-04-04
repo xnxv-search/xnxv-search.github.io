@@ -20,11 +20,20 @@ function getRadio(name) {
 }
 function getInput() {
 	if(!checkQuery()){ return false; }
+	const data = getSites();
+	const raw = getRaw(),
+		query = getQuery(),
+		site = getRadio('site'),
+		type = getRadio('type'),
+		dur = getRadio('dur');
+	const durVal = data[site].dur[dur];
 	return {
-		raw: getRaw(),
-		query: getQuery(),
-		site: getRadio('site'),
-		dur: getRadio('dur')
+		raw,
+		query,
+		site,
+		dur,
+		type,
+		durVal
 	};
 }
 function getSites() {
@@ -76,12 +85,46 @@ function aClicker(url) {
 	a.click();
 	a.remove();
 }
+function paramSet() {
+	const i = getInput();
+	const params = [
+		{
+			param: "query",
+			value: i.raw
+		},
+		{
+			param: "site",
+			value: i.site
+		},
+		{
+			param: "dur",
+			value: i.dur
+		},
+		{
+			param: "type",
+			value: i.type
+		}
+	];
+	setParams(params);
+}
+function paramsAuto() {
+	if (!checkParams()) { return; }
+	setInput('query','#input-query');
+	setRadio('site');
+	setRadio('dur');
+	setRadio('type');
+	inbox(0);
+	outbox(1);
+	updateName();
+}
 function runSearch() {
 	if(!checkQuery()){ return false; }
+	paramSet();
 	inbox(0);
 	outbox(1);
 	updateName();
 	copy();
+	// search();
 }
 function buildName() {
 	const i = getInput();
@@ -95,7 +138,9 @@ function updateName() {
 	const out = document.getElementById('output-box');
 	let name = buildName();
 	out.value = name;
-	updateTitle(name);
+	const i = getInput();
+	const title = `${name} [${i.durVal}]`;
+	updateTitle(title);
 }
 function updateTitle(suffix) {
 	/*
@@ -109,12 +154,13 @@ function updateTitle(suffix) {
 	*/
 	const newTitle = (!suffix) ? (`XNXV Search`) : (`${suffix} | XNXV Search`);
 	document.title = newTitle;
-	log('Title:',newTitle);
+	// log('Title:',newTitle);
 }
 function back() {
 	outbox(0);
 	inbox(1);
 	updateTitle();
+	clearParams();
 }
 function search() {
 	if(!checkQuery()){ return false; }
@@ -172,5 +218,6 @@ function init() {
 	armRad();
 	armTxt();
 	outbox(0);
+	paramsAuto();
 }
 init();
