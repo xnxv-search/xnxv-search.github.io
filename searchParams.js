@@ -34,7 +34,7 @@ function setParams (params = []) {
 	params.forEach(x => {
 		url.searchParams.set(x.param,x.value);
 	});
-	history.replaceState({},"",url);
+	history.pushState({},"",url);
 }
 function clearParams() {
 	const url = new URL(document.URL);
