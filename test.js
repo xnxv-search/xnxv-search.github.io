@@ -1,4 +1,26 @@
-const test = { auto: {} };
+ const test = { auto: {} };
+
+test.logInput = function () {
+	const i = getInput();
+	alert(`Raw: ${i.raw}
+Query: ${i.query}
+Site: ${i.site}
+Dur: ${i.dur}
+DurVal: ${i.durVal}`);
+};
+test.setParams = function () {
+	paramSet();
+	log(document.URL);
+	alert(document.URL);
+};
+test.clearParams = function () {
+	clearParams();
+	alert(document.URL);
+};
+test.autoParams = function () {
+	paramsAuto();
+};
+
 
 /*
 test.f1 = function () {
