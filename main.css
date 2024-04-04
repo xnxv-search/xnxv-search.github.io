@@ -9,7 +9,15 @@ header {
 header h1 {
 	font-size: 3rem;
 	margin: 1.3rem auto;
-	text-align: center;;
+	margin-bottom: 0.2rem;
+	text-align: center;
+}
+header .page-version {
+	display: block;
+	font-size: 0.8rem;
+	margin: 0.5rem auto;
+	margin-top: 0;
+	text-align: center;
 }
 body {
 	padding-top: 10rem;

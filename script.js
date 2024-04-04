@@ -1,3 +1,11 @@
+const v = "1.1.2.2";
+function setVersion(ver) {
+	const target = document.querySelector('header .page-version');
+	target.innerText = `v. ${ver}`;
+	// log(target.innerTxt);
+// 	log(version);
+// 	log(target.innerTxt);
+}
 function checkQuery() {
 	const iBox = document.getElementById('input-query');
 	return iBox.checkValidity();
@@ -217,6 +225,7 @@ function armTxt() {
 // 	t.addEventListener('change',outbox);
 }
 function init() {
+	setVersion(v);
 	armBtn();
 	armRad();
 	armTxt();
