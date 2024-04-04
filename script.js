@@ -27,6 +27,7 @@ function getInput() {
 		type = getRadio('type'),
 		dur = getRadio('dur');
 	const durVal = data[site].dur[dur];
+	log(type);
 	return {
 		raw,
 		query,
@@ -135,7 +136,8 @@ function buildName() {
 	return name;
 }
 function updateName() {
-	if(!outbox('?')) { return false; }
+	//if(!outbox('?')) { return false; }
+	log('upfate name');
 	const out = document.getElementById('output-box');
 	let name = buildName();
 	out.value = name;
