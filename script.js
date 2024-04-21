@@ -1,11 +1,3 @@
-const v = "1.1.2.2";
-function setVersion(ver) {
-	const target = document.querySelector('header .page-version');
-	target.innerText = `v. ${ver}`;
-	// log(target.innerTxt);
-// 	log(version);
-// 	log(target.innerTxt);
-}
 function checkQuery() {
 	const iBox = document.getElementById('input-query');
 	return iBox.checkValidity();
@@ -122,15 +114,15 @@ function paramsAuto() {
 	setRadio('site');
 	setRadio('dur');
 	setRadio('type');
-	updateName();
 	paramSet();
+	updateName();
 	inbox(0);
 	outbox(1);
 }
 function runSearch() {
 	if(!checkQuery()){ return false; }
-	updateName();
 	paramSet();
+	updateName();
 	inbox(0);
 	outbox(1);
 	copy();
@@ -225,7 +217,6 @@ function armTxt() {
 // 	t.addEventListener('change',outbox);
 }
 function init() {
-	setVersion(v);
 	armBtn();
 	armRad();
 	armTxt();
