@@ -5,7 +5,7 @@ function checkQuery() {
 function getRaw() {
 	const iBox = document.getElementById('input-query');
 	let query = iBox.value.trim();
-	return query;
+	return properCase(query);
 }
 function getQuery() {
 	const iBox = document.getElementById('input-query');
