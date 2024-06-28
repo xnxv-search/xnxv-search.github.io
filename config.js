@@ -2,7 +2,7 @@ function pageConfig() {
 	const page = {
 		name: "XNXV Search",
 		title: "",
-		version: "1.1.3",
+		version: "1.1.4",
 		year: "2024",
 		creator: "David Jarvis"
 	};
