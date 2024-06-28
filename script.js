@@ -9,7 +9,7 @@ function getRaw() {
 }
 function getQuery() {
 	const iBox = document.getElementById('input-query');
-	let query = properCase(iBox.value.trim().replaceAll(/ +/g,'+'));
+	let query = getRaw().replaceAll(/ +/g,'+');
 	return encodeURI(query);
 }
 function getRadio(name) {
